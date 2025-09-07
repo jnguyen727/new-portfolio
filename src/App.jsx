@@ -260,7 +260,6 @@ function ProjectsContent({ onOpenProject, onSeeMore }) {
       {/* 👇 Friendly “see more” note */}
       <div className="mt-3 text-xs flex items-center gap-2">
         <span className="opacity-80">
-          Want to see more projects? Check my résumé for the full list
           <span className="opacity-70"> (if you want to see more of the actual projects, look on my resume lol)</span>.
         </span>
         <button
