@@ -227,25 +227,53 @@ function AboutContent(){
     </div>
   );
 }
-function ProjectsContent({ onOpenProject }){
-  const cards=[
-    {key:'campusconnect',title:'CampusConnect Socket Server (Java)',desc:'Multithreaded client–server with rooms, back‑pressure & reconnection.',gif:'/app.gif'},
-    {key:'chess-analytics',title:'Big Data Chess Analytics (AWS)',desc:'EMR + HiveQL pipelines for openings, rating drift, tactic clusters.',gif:'/chess.gif'},
-    {key:'cpp-sim',title:'NERV Missle Defense',desc:'A terminal missle defense simulator I made in C++. You are are NERV, and angels are trying to attack you. Thankfully, you have heatseeking missles to defeat them.',gif:'/cpp.gif'},
-    {key:'rf-classifier',title:'Raytheon RF Signal Classifier (GPU)',desc:'Python prototypes from MATLAB datasets; GPU‑accelerated classification for real‑time RF.',gif:'/f16.gif'},
+// ✨ add onSeeMore to the props
+function ProjectsContent({ onOpenProject, onSeeMore }) {
+  const cards = [
+    { key:'campusconnect', title:'CampusConnect Socket Server (Java)', desc:'Multithreaded client–server with rooms, back-pressure & reconnection.', gif:'/lol.gif' },
+    { key:'chess-analytics', title:'Big Data Chess Analytics (AWS)', desc:'EMR + HiveQL pipelines for openings, rating drift, tactic clusters.', gif:'/chess.gif' },
+    { key:'cpp-sim', title:'NERV Missle Defense', desc:'A terminal missle defense simulator I made in C++. You are are NERV, and angels are trying to attack you. Thankfully, you have heatseeking missles to defeat them.', gif:'/cpp.gif' },
+    { key:'rf-classifier', title:'Raytheon RF Signal Classifier (GPU)', desc:'Python prototypes from MATLAB datasets; GPU-accelerated classification for real-time RF.', gif:'/f16.gif' },
   ];
+
   return (
-    <div className="grid sm:grid-cols-2 gap-3">
-      {cards.map((p)=> (
-        <button key={p.key} onClick={()=>onOpenProject(p)} className="text-left bg-white/90 p-3 border border-[#bfbfbf] shadow hover:shadow-md">
-          <div className="font-semibold flex items-center gap-2"><FolderGit2 size={16} className="text-[#245edc]"/>{p.title}</div>
-          <div className="text-sm mt-1 opacity-80">{p.desc}</div>
-          <div className="mt-2 text-xs text-[#245edc] flex items-center gap-1"><ImageIcon size={14}/> Click to preview GIF</div>
+    <div>
+      <div className="grid sm:grid-cols-2 gap-3">
+        {cards.map((p) => (
+          <button
+            key={p.key}
+            onClick={() => onOpenProject(p)}
+            className="text-left bg-white/90 p-3 border border-[#bfbfbf] shadow hover:shadow-md"
+          >
+            <div className="font-semibold flex items-center gap-2">
+              <FolderGit2 size={16} className="text-[#245edc]" />
+              {p.title}
+            </div>
+            <div className="text-sm mt-1 opacity-80">{p.desc}</div>
+            <div className="mt-2 text-xs text-[#245edc] flex items-center gap-1">
+              <ImageIcon size={14} /> Click to preview GIF
+            </div>
+          </button>
+        ))}
+      </div>
+
+      {/* 👇 Friendly “see more” note */}
+      <div className="mt-3 text-xs flex items-center gap-2">
+        <span className="opacity-80">
+          Want to see more projects? Check my résumé for the full list
+          <span className="opacity-70"> (if you want to see more of the actual projects, look on my resume lol)</span>.
+        </span>
+        <button
+          onClick={onSeeMore}
+          className="px-2 py-1 border border-[#8c8c8c] bg-[#dcdcdc] hover:brightness-95"
+        >
+          Open Résumé
         </button>
-      ))}
+      </div>
     </div>
   );
 }
+
 function ProjectViewer({ project }){ if(!project) return null; return (
   <div className="space-y-2">
     <div className="font-semibold text-[15px]">{project.title}</div>
@@ -607,10 +635,23 @@ export default function RetroXPPortfolio(){
             </DraggableWindow>
           )}
           {open.projects && !minimized['projects'] && (
-            <DraggableWindow id="projects" title="Projects — Explorer" icon={<FolderGit2 size={10}/>} onClose={closeWindow} onMinimize={minimizeWindow} onFocus={focus} zIndex={zMap['projects']||65} initial={{x:420,y:160}}>
-              <ProjectsContent onOpenProject={(p)=>{ setActiveProject(p); openWindow('projectViewer'); }}/>
-            </DraggableWindow>
-          )}
+  <DraggableWindow
+    id="projects"
+    title="Projects — Explorer"
+    icon={<FolderGit2 size={10} />}
+    onClose={closeWindow}
+    onMinimize={minimizeWindow}
+    onFocus={focus}
+    zIndex={zMap['projects'] || 65}
+    initial={{ x: 420, y: 160 }}
+  >
+    <ProjectsContent
+      onOpenProject={(p) => { setActiveProject(p); openWindow('projectViewer'); }}
+      onSeeMore={() => openWindow('resume')}   // 👈 opens your résumé viewer
+    />
+  </DraggableWindow>
+)}
+
           {open.projectViewer && !minimized['projectViewer'] && (
             <DraggableWindow id="projectViewer" title="Project Viewer" icon={<ImageIcon size={10}/>} onClose={closeWindow} onMinimize={minimizeWindow} onFocus={focus} zIndex={zMap['projectViewer']||75} initial={{x:620,y:180}}>
               <ProjectViewer project={activeProject}/>
