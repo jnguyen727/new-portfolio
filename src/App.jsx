@@ -503,7 +503,7 @@ export function ResumeViewer({ titlebarRef, onClose, onMinimize }) {
               <input type="checkbox" checked={scan} onChange={(e)=>setScan(e.target.checked)} />
               Scanlines
             </label>
-            <a className="ml-auto underline text-[#245edc]" href="/Johnny_Nguyen_Resume.png" target="_blank" rel="noreferrer">
+            <a className="ml-auto underline text-[#245edc]" href="/Johnny_Nguyen_Resume_new.png" target="_blank" rel="noreferrer">
               Open PDF in new tab
             </a>
           </div>
@@ -516,7 +516,7 @@ export function ResumeViewer({ titlebarRef, onClose, onMinimize }) {
           >
             <div className="min-w-full flex justify-center">
               <img
-                src="/Johnny_Nguyen_Resume.png"
+                src="/Johnny_Nguyen_Resume_new.png"
                 alt="Resume"
                 onLoad={(e) => {
                   const { naturalWidth: w, naturalHeight: h } = e.currentTarget;
