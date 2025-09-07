@@ -229,12 +229,37 @@ function AboutContent(){
 }
 // ✨ add onSeeMore to the props
 function ProjectsContent({ onOpenProject, onSeeMore }) {
-  const cards = [
-    { key:'campusconnect', title:'CampusConnect Socket Server (Java)', desc:'Multithreaded client–server with rooms, back-pressure & reconnection.', gif:'/lol.gif' },
-    { key:'chess-analytics', title:'Big Data Chess Analytics (AWS)', desc:'EMR + HiveQL pipelines for openings, rating drift, tactic clusters.', gif:'/chess.gif' },
-    { key:'cpp-sim', title:'NERV Missle Defense', desc:'A terminal missle defense simulator I made in C++. You are are NERV, and angels are trying to attack you. Thankfully, you have heatseeking missles to defeat them.', gif:'/cpp.gif' },
-    { key:'rf-classifier', title:'Raytheon RF Signal Classifier (GPU)', desc:'Python prototypes from MATLAB datasets; GPU-accelerated classification for real-time RF.', gif:'/f16.gif' },
-  ];
+const cards = [
+  {
+    key: "campusconnect",
+    title: "CampusConnect (Java, Swing, sockets, threads)",
+    desc:
+      "Multithreaded client–server with sockets & in-memory DB; handled 100+ concurrent clients. Built a Swing GUI for posts/feeds/comments, wrote 25+ JUnit tests (90%+ coverage), and led a 3-person team to a full 9-week demo.",
+    gif: "/lol.gif",
+  },
+  {
+    key: "chess-analytics",
+    title: "Big Data Chess Analytics (AWS EMR/Hadoop, HiveQL, Python)",
+    desc:
+      "Yonsei Univ (Seoul): deployed a multi-node EMR workflow on a 4.38 GB chess dataset, optimized 100+ HiveQL queries (≈60% faster), and built 10+ visualizations for rating distributions & gameplay trends.",
+    gif: "/chess.gif",
+  },
+  {
+    key: "cpp-sim",
+    title: "NERV Missle Defense",
+    desc:
+      "A terminal missle defense simulator I made in C++. You are are NERV, and angels are trying to attack you. Thankfully, you have heatseeking missles to defeat them.",
+    gif: "/cpp.gif",
+  },
+  {
+    key: "rf-classifier",
+    title: "Raytheon RF Signal Classifier (GPU)",
+    desc:
+      "Python pipeline for RF signal classification; prototyping DSP/ML on simulated 5G/LTE-style datasets and exploring GPU acceleration. Goal: integrate the classifier on an F-16 test flight for in-flight data collection.",
+    gif: "/f16.gif",
+  },
+];
+
 
   return (
     <div>
