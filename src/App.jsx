@@ -217,7 +217,7 @@ function AboutContent(){
   return (
     <div className="space-y-3 text-sm">
       <p>
-        Hey! I’m <b>{RESUME.name}</b> — {RESUME.location}. I’m currently <b>classifying RF signals</b> as an Undergraduate Researcher for <b>Raytheon</b> at Purdue. I love <b>embedded systems</b>, aerospace‑oriented software engineering, and coding for fun. Outside class, I’ve joined the <b>Purdue Space Program</b> to program real satellites.
+        Hey! I’m <b>{RESUME.name}</b> and I'm from Fort Wayne, Indiana. I’m currently <b>classifying RF signals</b> as an Undergraduate Researcher for <b>Raytheon</b> at Purdue. I love <b>embedded systems</b>, aerospace‑oriented software engineering, and coding for fun. Outside class, I’ve joined the <b>Purdue Space Program</b> to program real satellites, boxing club to practice boxing and the bodybuilding club since I love bodybuildling.
       </p>
       <p>
         Contact: <a className="underline" href={`mailto:${RESUME.email}`}>{RESUME.email}</a> · {RESUME.phone}. Links:
@@ -231,7 +231,7 @@ function ProjectsContent({ onOpenProject }){
   const cards=[
     {key:'campusconnect',title:'CampusConnect Socket Server (Java)',desc:'Multithreaded client–server with rooms, back‑pressure & reconnection.',gif:'/gifs/campusconnect.gif'},
     {key:'chess-analytics',title:'Big Data Chess Analytics (AWS)',desc:'EMR + HiveQL pipelines for openings, rating drift, tactic clusters.',gif:'/gifs/chess.gif'},
-    {key:'cpp-sim',title:'Embedded C++ Simulation',desc:'C++17 fixed‑rate loop with chrono::steady_clock, CLI flags for hz/duration, defense‑style tick loop.',gif:'/gifs/cpp.gif'},
+    {key:'cpp-sim',title:'NERV Missle Defense',desc:'A terminal missle defense simulator I made in C++. You are are NERV, and angels are trying to attack you. Thankfully, you have heatseeking missles to defeat them.',gif:'/cpp.gif'},
     {key:'rf-classifier',title:'Raytheon RF Signal Classifier (GPU)',desc:'Python prototypes from MATLAB datasets; GPU‑accelerated classification for real‑time RF.',gif:'/gifs/rf.gif'},
   ];
   return (
