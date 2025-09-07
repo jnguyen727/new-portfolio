@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "deploy": "wrangler pages deploy dist --project-name=retro-xp-portfolio --branch=main"
+    "deploy": "wrangler pages deploy dist --project-name=new-portfolio --branch=main"
   },
   "dependencies": {
     "framer-motion": "^11.5.4",
