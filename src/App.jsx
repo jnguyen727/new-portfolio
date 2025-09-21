@@ -257,7 +257,7 @@ const cards = [
     key: "sats-cdh",
     title: "Purdue Space Program – SATS CubeSat (NASA F´, C++)",
     desc: "Integrating NASA F´ software with CubeSat avionics for telemetry, command parsing, and 2027 launch readiness.",
-    gif: "/sats.gif",
+    gif: "/space-roblox.gif",
   },
 ];
 
