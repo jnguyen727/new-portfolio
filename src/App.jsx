@@ -217,7 +217,10 @@ function AboutContent(){
   return (
     <div className="space-y-3 text-sm">
       <p>
-        Hey! I’m <b>{RESUME.name}</b> and I'm from Fort Wayne, Indiana. I’m currently <b>classifying RF signals</b> as an Undergraduate Researcher for <b>Raytheon</b> at Purdue. I love <b>embedded systems</b>, aerospace‑oriented software engineering, and coding for fun. Outside class, I’ve joined the <b>Purdue Space Program</b> to program real satellites, boxing club to practice boxing and the bodybuilding club since I love bodybuildling.
+        Hey! I’m <b>Johnny Nguyen</b>, a Computer Science student at Purdue from Fort Wayne, Indiana. 
+        I’m a <b>first-gen student</b> who’s into <b>systems programming</b> and <b>aerospace/defense tech</b>. 
+        I’m also part of the <b>Purdue Space Program</b>, where I work on satellite programming with NASA’s <b>F´ (F Prime)</b>. 
+        Outside of class, you’ll probably find me boxing, lifting, gaming, or just chilling.
       </p>
       <p>
         Contact: <a className="underline" href={`mailto:${RESUME.email}`}>{RESUME.email}</a> · {RESUME.phone}. Links:
@@ -227,38 +230,40 @@ function AboutContent(){
     </div>
   );
 }
+
 // ✨ add onSeeMore to the props
 function ProjectsContent({ onOpenProject, onSeeMore }) {
 const cards = [
   {
-    key: "campusconnect",
-    title: "CampusConnect (Java, Swing, sockets, threads)",
+    key: "nerv-sim",
+    title: "NERV Missile Defense Simulator (C++, chrono, RNG)",
     desc:
-      "Multithreaded client–server with sockets & in-memory DB; handled 100+ concurrent clients. Built a Swing GUI for posts/feeds/comments, wrote 25+ JUnit tests (90%+ coverage), and led a 3-person team to a full 9-week demo.",
-    gif: "/lol.gif",
-  },
-  {
-    key: "chess-analytics",
-    title: "Big Data Chess Analytics (AWS EMR/Hadoop, HiveQL, Python)",
-    desc:
-      "Yonsei Univ (Seoul): deployed a multi-node EMR workflow on a 4.38 GB chess dataset, optimized 100+ HiveQL queries (≈60% faster), and built 10+ visualizations for rating distributions & gameplay trends.",
-    gif: "/chess.gif",
-  },
-  {
-    key: "cpp-sim",
-    title: "NERV Missle Defense",
-    desc:
-      "A terminal missle defense simulator I made in C++. You are are NERV, and angels are trying to attack you. Thankfully, you have heatseeking missles to defeat them.",
+      "Implemented a deterministic tick-rate game loop (10–20 Hz, ±1–2 ms jitter) with pause/step controls. Built an allocation-free entity system for interceptors/enemies with collisions, HP/damage logic, and embedded-friendly tick updates.",
     gif: "/cpp.gif",
   },
   {
-    key: "rf-classifier",
-    title: "Raytheon RF Signal Classifier (GPU)",
+    key: "chess-analytics",
+    title: "Big Data Chess Analytics (Hadoop, HiveQL, Python)",
     desc:
-      "Python pipeline for RF signal classification; prototyping DSP/ML on simulated 5G/LTE-style datasets and exploring GPU acceleration. Goal: integrate the classifier on an F-16 test flight for in-flight data collection.",
+      "Led a 4-person team at Yonsei University (Seoul) to process a 4.38 GB chess dataset. Built HiveQL tables to analyze trends across ratings, openings, and time controls. Created 10+ insights (e.g., King’s Pawn win rate) and visualized results in Excel/Power BI for 30+ students.",
+    gif: "/chess.gif",
+  },
+  {
+    key: "rtx-rf",
+    title: "Raytheon RF Signal Research (Python, NumPy/SciPy, GPU)",
+    desc:
+      "Collaborating with RTX engineers to develop synthetic RF datasets for spectrogram-based classification. Validated datasets for transformer models, supporting CADS deployment and upcoming F-16 flight tests with GPU-accelerated pipelines.",
     gif: "/f16.gif",
   },
+  {
+    key: "sats-cdh",
+    title: "Purdue Space Program – SATS CubeSat (NASA F´, C++)",
+    desc:
+      "Supporting the shift from research into implementation for 2027 launch. Onboarded to NASA F´ for command parsing, telemetry, and sensor pipelines. Integrating with avionics (radios, GPS, reaction wheels) over CAN/I²C/SPI in the CDH subsystem.",
+    gif: "/sats.gif",
+  },
 ];
+
 
 
   return (
@@ -284,9 +289,6 @@ const cards = [
 
       {/* 👇 Friendly “see more” note */}
       <div className="mt-3 text-xs flex items-center gap-2">
-        <span className="opacity-80">
-          <span className="opacity-70"> (if you want to see more of the actual projects, look on my resume lol)</span>.
-        </span>
         <button
           onClick={onSeeMore}
           className="px-2 py-1 border border-[#8c8c8c] bg-[#dcdcdc] hover:brightness-95"
