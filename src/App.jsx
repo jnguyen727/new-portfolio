@@ -217,13 +217,13 @@ function AboutContent(){
   return (
     <div className="space-y-3 text-sm">
       <p>
-        Hey! I’m <b>Johnny Nguyen</b>, a Computer Science student at Purdue from Fort Wayne, Indiana. 
-        I’m a <b>first-gen student</b> who’s into <b>systems programming</b> and <b>aerospace/defense tech</b>. 
-        I’m also part of the <b>Purdue Space Program</b>, where I work on satellite programming with NASA’s <b>F´ (F Prime)</b>. 
+        Hey! I’m Johnny Nguyen, a Computer Science student at Purdue from Fort Wayne, Indiana. 
+        I’m a first-gen student who’s into systems programming and aerospace/defense tech. 
+        I’m also part of the Purdue Space Program, where I work on satellite programming with NASA’s F´ (F Prime). 
         Outside of class, you’ll probably find me boxing, lifting, gaming, or just chilling.
       </p>
       <p>
-        Contact: <a className="underline" href={`mailto:${RESUME.email}`}>{RESUME.email}</a> · {RESUME.phone}. Links:
+        Contact: <a className="underline" href={`mailto:${RESUME.email}`}>{RESUME.email}</a>. Links:
         <a className="underline ml-1" href={`https://${RESUME.links.linkedin}`} target="_blank" rel="noreferrer">LinkedIn</a>,
         <a className="underline ml-1" href={`https://${RESUME.links.github}`} target="_blank" rel="noreferrer">GitHub</a>.
       </p>
@@ -231,38 +231,36 @@ function AboutContent(){
   );
 }
 
+
 // ✨ add onSeeMore to the props
 function ProjectsContent({ onOpenProject, onSeeMore }) {
 const cards = [
   {
     key: "nerv-sim",
     title: "NERV Missile Defense Simulator (C++, chrono, RNG)",
-    desc:
-      "Implemented a deterministic tick-rate game loop (10–20 Hz, ±1–2 ms jitter) with pause/step controls. Built an allocation-free entity system for interceptors/enemies with collisions, HP/damage logic, and embedded-friendly tick updates.",
+    desc: "Built a real-time C++ terminal game with deterministic tick loop, entity collisions, and damage logic.",
     gif: "/cpp.gif",
   },
   {
     key: "chess-analytics",
     title: "Big Data Chess Analytics (Hadoop, HiveQL, Python)",
-    desc:
-      "Led a 4-person team at Yonsei University (Seoul) to process a 4.38 GB chess dataset. Built HiveQL tables to analyze trends across ratings, openings, and time controls. Created 10+ insights (e.g., King’s Pawn win rate) and visualized results in Excel/Power BI for 30+ students.",
+    desc: "Processed a 4.38 GB chess dataset with HiveQL, uncovering gameplay trends and presenting insights at Yonsei University.",
     gif: "/chess.gif",
   },
   {
     key: "rtx-rf",
     title: "Raytheon RF Signal Research (Python, NumPy/SciPy, GPU)",
-    desc:
-      "Collaborating with RTX engineers to develop synthetic RF datasets for spectrogram-based classification. Validated datasets for transformer models, supporting CADS deployment and upcoming F-16 flight tests with GPU-accelerated pipelines.",
+    desc: "Developed and validated synthetic RF datasets for GPU-accelerated spectrogram classifiers supporting F-16 tests.",
     gif: "/f16.gif",
   },
   {
     key: "sats-cdh",
     title: "Purdue Space Program – SATS CubeSat (NASA F´, C++)",
-    desc:
-      "Supporting the shift from research into implementation for 2027 launch. Onboarded to NASA F´ for command parsing, telemetry, and sensor pipelines. Integrating with avionics (radios, GPS, reaction wheels) over CAN/I²C/SPI in the CDH subsystem.",
+    desc: "Integrating NASA F´ software with CubeSat avionics for telemetry, command parsing, and 2027 launch readiness.",
     gif: "/sats.gif",
   },
 ];
+
 
 
 
